@@ -33,7 +33,7 @@ public class Login{
         //Click to login button
         driver.findElement(By.xpath("//*[contains(@type,'submit')]")).click();
         //User page validation via userID and Username
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("userName")));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[contains(@class,'flex-row username')]")));
         Assert.assertEquals(driver.findElement(By.xpath("//*[contains(@class,'user-id')]")).getText(), "ID: 4837145");
         Assert.assertEquals(driver.findElement(By.id("userName")).getText(), "qa_5");
     }
